@@ -1,10 +1,10 @@
-import styled from '@emotion/styled'
+import { css } from '@acab/ecsstatic'
 import { BodyCommonStyles } from './ResumeBodyStyles.jsx'
 import { useState, useEffect } from 'preact/hooks'
 
-export const Description = styled.p`
-  ${BodyCommonStyles}
-`
+export const Description = ({ children }) => {
+  return <p className={BodyCommonStyles}>{children}</p>
+}
 
 // export const Accent = styled.span`
 //   font-weight: 600;
@@ -12,70 +12,82 @@ export const Description = styled.p`
 //   color: ${mainColors.textPrimaryColor};
 // `;
 
-export const ContactName = styled.span`
-  text-transform: capitalize;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 600;
-  color: white;
-  @media screen and (min-width: 30em) {
-    padding-top: unset;
-    font-size: var(--headerPrimarySize);
-    font-size: 2em;
-  }
-  @media print {
-    font-size: var(--headerPrimarySize);
-    font-size: 1em;
-  }
-`
-
-export const ContactDetails = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  @media screen and (min-width: 30em) {
-    text-align: right;
-  }
-  @media print {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-
-    li {
-      margin: 1em;
+export const ContactName = ({ children }) => {
+  const styles = css`
+    text-transform: capitalize;
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 600;
+    color: white;
+    @media screen and (min-width: 30em) {
+      padding-top: unset;
+      font-size: var(--headerPrimarySize);
+      font-size: 2em;
     }
-  }
-`
+    @media print {
+      font-size: var(--headerPrimarySize);
+      font-size: 1em;
+    }
+  `
+  return <span className={styles}>{children}</span>
+}
 
-export const ContactDetailsAnchorTag = styled.a`
-  text-decoration: none;
-  color: white;
-`
+export const ContactDetails = ({ children }) => {
+  const styles = css`
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    @media screen and (min-width: 30em) {
+      text-align: right;
+    }
+    @media print {
+      display: flex;
+      flex-direction: row;
+      width: fit-content;
 
-const HeaderBase = styled.header`
-  font-family: 'Yantramanav', sans-serif;
-  font-size: var(--headerPrimarySize);
+      li {
+        margin: 1em;
+      }
+    }
+  `
+  return <ul className={styles}>{children}</ul>
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accentColor);
-  height: fit-content;
-  padding: 1em;
-  @media screen and (min-width: 30em) {
-    flex-basis: auto;
-    padding: 0 20px;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  @media print {
-    height: 10px;
-    flex-direction: row;
+export const ContactDetailsAnchorTag = ({ children }) => {
+  const styles = css`
+    text-decoration: none;
+    color: white;
+  `
+  return <a className={styles}>{children}</a>
+}
+
+const HeaderBase = ({ children }) => {
+  const styles = css`
+    font-family: 'Yantramanav', sans-serif;
+    font-size: var(--headerPrimarySize);
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-`
+    background-color: var(--accentColor);
+    height: fit-content;
+    padding: 1em;
+    @media screen and (min-width: 30em) {
+      flex-basis: auto;
+      padding: 0 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @media print {
+      height: 10px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  `
+  return <header className={styles}>{children}</header>
+}
 
 const Header = (props) => {
   const { name, site, emailLabel, emailLinkValue, phone } = props.config

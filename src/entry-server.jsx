@@ -1,8 +1,7 @@
-import render from "preact-render-to-string"
-import Test from './Test';
+import render from 'preact-render-to-string'
+const Test = () => <p>this is a test</p>
 
 export function serverRender(url, context) {
-  return render(
-      <Test />
-  )
+  const ex = render(<Test />)
+  return { body: ex, status: 200, type: 'text/html' }
 }

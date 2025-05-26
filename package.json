@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "description": "resume builder",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/ajstrand/styled-resume.git",
   "author": "Alex <ajstrand8@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "node server",
+    "client": "vite",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
@@ -19,23 +21,26 @@
     "test": "vitest"
   },
   "dependencies": {
-    "pollen-css": "^5.0.1",
-    "prop-types": "^15.8.1",
-    "preact-render-to-string": "^6.5.12"
+    "@acab/ecsstatic": "^0.9.0",
+    "pollen-css": "^5.0.2",
+    "preact-render-to-string": "^6.5.13",
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "preact": "^10.25.4"
+    "preact": "10.26.6"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.26.0",
-    "@babel/preset-react": "^7.26.3",
+    "fs-extra": "11.3.0",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@biomejs/biome": "1.9.4",
     "@emotion/babel-plugin": "^11.13.5",
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "11.14.0",
     "@preact/preset-vite": "^2.9.4",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/preact": "^3.2.4",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/preact": "3.2.4",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "compression": "^1.7.4",
@@ -46,14 +51,14 @@
     "eslint-plugin-testing-library": "^5.0.4",
     "express": "^4.21.2",
     "husky": "^4.3.6",
+    "oxlint": "0.15.5",
     "postcss": "^8.4.5",
     "postcss-custom-media": "^8.0.0",
     "react": "^18.3.1",
     "serve-static": "^1.16.2",
-    "stylelint": "^14.3.0",
+    "stylelint": "16.19.1",
     "stylelint-config-recommended": "^6.0.0",
-    "vite": "^6.0.7",
-    "vitest": "^2.1.8",
-    "oxlint": "0.15.5"
+    "vite": "6.3.5",
+    "vitest": "3.1.4"
   }
 }

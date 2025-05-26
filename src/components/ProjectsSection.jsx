@@ -1,33 +1,35 @@
+import { css } from '@acab/ecsstatic'
 
+import { ExperienceProjectItem } from './ResumeBodyStyles.jsx'
 
-import styled from '@emotion/styled'
+import { LeftColumn, RightColumn } from './ColumnComponents.jsx'
 
-import {
-  ExperienceProjectItem,
-  LeftColumn,
-  RightColumn,
-} from "./ResumeBodyStyles.jsx";
+export const ProjectDescList = ({ children }) => {
+  const styles = css`
+    padding: 0;
+  `
+  return <ul className={styles}>{children}</ul>
+}
 
-
-export const ProjectDescList = styled.ul`
-  padding: 0;
-`;
-export const ProjectDescListItem = styled.li`
-  list-style-type: none;
-`;
+export const ProjectDescListItem = ({ children }) => {
+  const styles = css`
+    list-style-type: none;
+  `
+  return <li className={styles}>{children}</li>
+}
 
 const ProjectsSection = (props) => {
-  const { config } = props;
+  const { config } = props
   if (config === null || config === undefined) {
-    return null;
+    return null
   }
   const projectList = config.map((project) => {
-    const { title, dateRange, desc } = project;
+    const { title, dateRange, desc } = project
     const jsx = (
       <ExperienceProjectItem key={title.toString()}>
         <LeftColumn>
-          <span className="projectName">{title}</span>
-          <span className="dateRange">{dateRange}</span>
+          <span className='projectName'>{title}</span>
+          <span className='dateRange'>{dateRange}</span>
         </LeftColumn>
         <RightColumn>
           <ProjectDescList>
@@ -35,10 +37,10 @@ const ProjectsSection = (props) => {
           </ProjectDescList>
         </RightColumn>
       </ExperienceProjectItem>
-    );
-    return jsx;
-  });
-  return projectList;
-};
+    )
+    return jsx
+  })
+  return projectList
+}
 
-export default ProjectsSection;
+export default ProjectsSection

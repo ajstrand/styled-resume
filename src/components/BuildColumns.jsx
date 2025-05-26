@@ -1,5 +1,3 @@
-import { h } from 'preact'
-
 import {
   LeftColumn,
   PlainLeftColumnName,
@@ -7,7 +5,7 @@ import {
   RightColumn,
   PlainRightColumnTitle,
   PlainRightColumnDescription
-} from './ResumeBodyStyles.jsx'
+} from './ColumnComponents.jsx'
 
 const generateColumns = (first, second, third) => {
   return (
