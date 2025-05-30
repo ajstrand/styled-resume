@@ -1,5 +1,3 @@
-import { h } from 'preact'
-import generateColumns from './BuildColumns.jsx'
 import { EducationDetails } from './ResumeBodyStyles.jsx'
 const EducationSection = (props) => {
   const { config } = props
@@ -16,7 +14,6 @@ const EducationSection = (props) => {
 
     return (
       <EducationDetails key={section.toString()}>
-        {/* {generateColumns(name, date, program)} */}
         <span>{name}</span>
         <span>{program}</span>
         <span>{date}</span>

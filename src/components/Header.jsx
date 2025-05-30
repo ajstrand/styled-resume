@@ -23,8 +23,7 @@ export const ContactName = styled.span`
     font-size: 2em;
   }
   @media print {
-    font-size: var(--headerPrimarySize);
-    font-size: 1em;
+    font-size: 12px;
   }
 `
 
@@ -37,6 +36,7 @@ export const ContactDetails = styled.ul`
     text-align: right;
   }
   @media print {
+    font-size: 12px;
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -74,6 +74,7 @@ const HeaderBase = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
   }
 `
 
@@ -85,7 +86,7 @@ const Header = (props) => {
   const [localTheme, setData] = useState(theme)
 
   useEffect(() => {
-    let { mainColors } = theme
+    const { mainColors } = theme
     setData(mainColors)
   }, [theme])
 

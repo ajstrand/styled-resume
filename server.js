@@ -1,6 +1,6 @@
-const fs = require('fs')
-const path = require('path')
-const express = require('express')
+import { readFileSync } from 'node:fs'
+import { resolve as _resolve } from 'node:path'
+import express from 'express'
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 
@@ -10,10 +10,10 @@ async function createServer(
   root = process.cwd(),
   isProd = process.env.NODE_ENV === 'production'
 ) {
-  const resolve = (p) => path.resolve(__dirname, p)
+  const resolve = (p) => _resolve(__dirname, p)
 
   const indexProd = isProd
-    ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8')
+    ? readFileSync(resolve('dist/client/index.html'), 'utf-8')
     : ''
 
   const app = express()
@@ -51,10 +51,11 @@ async function createServer(
     try {
       const url = req.originalUrl
 
-      let template, render
+      let template
+      let render
       if (!isProd) {
         // always read fresh template in dev
-        template = fs.readFileSync(resolve('index.html'), 'utf-8')
+        template = readFileSync(resolve('index.html'), 'utf-8')
         template = await vite.transformIndexHtml(url, template)
         render = (await vite.ssrLoadModule('/src/entry-server.jsx')).serverRender
       } else {
@@ -70,7 +71,7 @@ async function createServer(
         return res.redirect(301, context.url)
       }
 
-      const html = template.replace(`<!--app-html-->`, appHtml)
+      const html = template.replace("<!--app-html-->", appHtml)
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
@@ -92,4 +93,5 @@ if (!isTest) {
 }
 
 // for test use
-exports.createServer = createServer
+const _createServer = createServer
+export { _createServer as createServer }

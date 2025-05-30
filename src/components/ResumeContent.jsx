@@ -13,7 +13,6 @@ import {
 
 import Header from './Header.jsx'
 
-import ProjectsSection from './ProjectsSection.jsx'
 import SkillsSection from './SkillsSection.jsx'
 import EducationSection from './EducationSection.jsx'
 import ExperienceSection from './ExperienceSection.jsx'
@@ -32,7 +31,6 @@ const Block = (props) => {
   const { componentType, config, theme } = props
   const components = {
     experience: ExperienceSection,
-    projects: ProjectsSection,
     education: EducationSection,
     skills: SkillsSection
   }

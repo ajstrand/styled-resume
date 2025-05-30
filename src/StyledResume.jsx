@@ -8,10 +8,10 @@ import './styles/tokens.css'
 //TODO: fix me stackoverflow
 const copyColor = (theme, userColors) => {
   if (userColors) {
-    let propsToFind = ['accentColor', 'headerPrimaryColor']
-    for (let key in theme) {
-      let newKey = userColors[key]
-      let old = theme[key]
+    const propsToFind = ['accentColor', 'headerPrimaryColor']
+    for (const key in theme) {
+      const newKey = userColors[key]
+      const old = theme[key]
       propsToFind.forEach((el) => {
         if (old[el] && newKey[el] !== undefined) {
           theme[key][el] = newKey[el]

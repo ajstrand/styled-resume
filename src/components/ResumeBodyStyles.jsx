@@ -43,20 +43,12 @@ export const PlainRightColumn = styled(Column)`
   & > ul {
     margin-top: 5px !important;
 
-    //margin: 0;
     padding-left: 1.2em;
     list-style-type: square;
   }
 
   & > .jobTitle ~ .jobTitle {
     margin-top: 10px;
-  }
-
-  @media print {
-    //background-color: black;
-    .list {
-      background-color: blueviolet;
-    }
   }
 `
 
@@ -112,7 +104,6 @@ export const ExperienceProjectSection = styled.div`
 export const ExperienceProjectItem = styled.div`
   display: flex;
   flex-direction: column;
-  //margin-top: 1em;
   flex-basis: 90vw;
   @media screen and (min-width: 30em) {
     display: grid;
@@ -122,6 +113,9 @@ export const ExperienceProjectItem = styled.div`
   }
   @media print {
     margin-top: 5px;
+    ul.list {
+      margin: 2px!important;
+    }
     .details {
       flex-direction: row;
       display: flex;
@@ -129,6 +123,8 @@ export const ExperienceProjectItem = styled.div`
 
       div {
         margin-right: 1em;
+        font-size: 12px;
+        flex-direction: row;
       }
     }
   }
@@ -140,6 +136,9 @@ export const PlainLeftColumnName = styled(PlainLeftColumn)`
   font-size: var(--headerPrimarySize);
   color: var(--textPrimaryColor);
   text-transform: capitalize;
+  @media print {
+    font-size: 12px;
+  }
 `
 
 export const PlainLeftColumnDateRange = styled(PlainLeftColumn)`
@@ -174,6 +173,7 @@ export const PlainRightColumnDescription = styled(PlainRightColumn)`
   }
   @media print {
     li {
+      font-size: 10px;
       margin: 0;
     }
   }
@@ -187,7 +187,8 @@ export const EducationDetails = styled.div`
     list-style-type: none;
   }
   @media print {
-    .details {
+    width: 100%;
+    span {
       font-size: 8px;
       flex-direction: row;
       display: flex;
