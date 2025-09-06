@@ -4,6 +4,7 @@ import ResumeContent from './components/ResumeContent.jsx'
 import defaultResumeDataObj from './components/myResumeData'
 import PropTypes, { string } from 'prop-types'
 import './styles/tokens.css'
+import Viewport from './components/Viewport.jsx'
 
 //TODO: fix me stackoverflow
 const copyColor = (theme, userColors) => {
@@ -35,7 +36,13 @@ const StyledResume = (props) => {
     //setTheme(res)
   }, [localTheme])
 
-  return <ResumeContent config={data} userColors={localTheme} />
+  const View = () => (
+    // <Viewport>
+    <ResumeContent config={data} userColors={localTheme} />
+    // </Viewport>
+  )
+
+  return <View />
 }
 
 StyledResume.propTypes = {
