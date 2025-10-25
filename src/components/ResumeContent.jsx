@@ -23,6 +23,7 @@ const ResumeGridContainer = styled.div`
   width: ${(props) => (props.resumeWidth ? props.resumeWidth : '100%')};
   @media print {
     width: 100%;
+    display: block;
   }
 `
 const Block = (props) => {

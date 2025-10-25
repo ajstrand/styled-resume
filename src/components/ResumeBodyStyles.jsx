@@ -18,8 +18,9 @@ export const ResumeBody = styled.div`
   grid-auto-rows: auto;
   grid-gap: var(--primarySpacing);
   @media print {
-    padding: 6px;
-    grid-gap: 3px;
+    padding: 2px;
+    //grid-gap: 3px;
+    display: block;
   }
 `
 
@@ -80,6 +81,9 @@ export const Section = styled.div`
   grid-auto-rows: min-content;
   display: grid;
   grid-gap: var(--smallSpacing);
+  @media print {
+    display: block;
+  }
 `
 
 export const ExperienceProjectSection = styled.div`
@@ -114,7 +118,7 @@ export const ExperienceProjectItem = styled.div`
   @media print {
     margin-top: 5px;
     ul.list {
-      margin: 2px!important;
+      margin: 2px !important;
     }
     .details {
       flex-direction: row;
