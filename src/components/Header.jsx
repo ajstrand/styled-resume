@@ -23,7 +23,7 @@ export const ContactName = styled.span`
     font-size: 2em;
   }
   @media print {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 `
 
@@ -36,7 +36,7 @@ export const ContactDetails = styled.ul`
     text-align: right;
   }
   @media print {
-    font-size: 12px;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: row;
     width: fit-content;

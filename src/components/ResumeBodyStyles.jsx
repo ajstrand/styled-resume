@@ -5,21 +5,20 @@ export const BodyCommonStyles = css`
   font-weight: 500;
   font-family: 'Khula', sans-serif;
   list-style-type: none;
-  font-size: 0.95em;
+  font-size: 1rem;
   color: var(--textSecondaryColor);
   @media screen and (min-width: 30em) {
     list-style-type: circle;
   }
 `
 export const ResumeBody = styled.div`
-  padding: 10px;
+  padding: 1em;
   display: grid;
   grid-column: 1;
   grid-auto-rows: auto;
   grid-gap: var(--primarySpacing);
   @media print {
-    padding: 2px;
-    //grid-gap: 3px;
+    padding: 1em;
     display: block;
   }
 `
@@ -116,9 +115,10 @@ export const ExperienceProjectItem = styled.div`
     grid-template-columns: minmax(auto, 135px) 1fr;
   }
   @media print {
-    margin-top: 5px;
+    margin-top: 0.5rem;
     ul.list {
-      margin: 2px !important;
+      margin-top: 0.3em !important;
+      padding-left: 1.1em;
     }
     .details {
       flex-direction: row;
@@ -127,7 +127,7 @@ export const ExperienceProjectItem = styled.div`
 
       div {
         margin-right: 1em;
-        font-size: 12px;
+        font-size: 1rem;
         flex-direction: row;
       }
     }
@@ -141,7 +141,7 @@ export const PlainLeftColumnName = styled(PlainLeftColumn)`
   color: var(--textPrimaryColor);
   text-transform: capitalize;
   @media print {
-    font-size: 12px;
+    font-size: 1em;
   }
 `
 
@@ -154,7 +154,7 @@ export const PlainLeftColumnDateRange = styled(PlainLeftColumn)`
     list-style-type: circle;
   }
   text-transform: uppercase;
-  font-size: 0.85em;
+  font-size: 0.85rem;
 `
 
 export const PlainRightColumnTitle = styled(PlainRightColumn)`
@@ -177,7 +177,7 @@ export const PlainRightColumnDescription = styled(PlainRightColumn)`
   }
   @media print {
     li {
-      font-size: 10px;
+      font-size: 0.85rem;
       margin: 0;
     }
   }
@@ -192,8 +192,9 @@ export const EducationDetails = styled.div`
   }
   @media print {
     width: 100%;
+    margin-top: 0.5rem;
     span {
-      font-size: 8px;
+      font-size: 1rem;
       flex-direction: row;
       display: flex;
       margin-right: 1em;

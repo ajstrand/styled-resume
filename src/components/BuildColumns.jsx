@@ -14,10 +14,10 @@ const generateColumns = (first, second, third) => {
     <div class='details'>
       <LeftColumn class='details'>
         <PlainLeftColumnName>{first}</PlainLeftColumnName>
-        <PlainLeftColumnDateRange>{second}</PlainLeftColumnDateRange>
+        <PlainRightColumnTitle>{third}</PlainRightColumnTitle>
       </LeftColumn>
       <RightColumn>
-        <PlainRightColumnTitle>{third}</PlainRightColumnTitle>
+        <PlainLeftColumnDateRange>{second}</PlainLeftColumnDateRange>
       </RightColumn>
     </div>
   )
