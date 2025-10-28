@@ -12,13 +12,13 @@ export const BodyCommonStyles = css`
   }
 `
 export const ResumeBody = styled.div`
-  padding: 1em;
+  padding: 0.2em;
   display: grid;
   grid-column: 1;
   grid-auto-rows: auto;
   grid-gap: var(--primarySpacing);
   @media print {
-    padding: 1em;
+    padding: 0.7em;
     display: block;
   }
 `
@@ -55,7 +55,10 @@ export const PlainRightColumn = styled(Column)`
 export const TwoColumnSection = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  @media print {
+    display: flex;
+    margin-top: 4em;
+  }
 `
 
 export const LeftColumn = styled(Column)`
@@ -76,20 +79,10 @@ export const RightColumn = styled(Column)`
   }
 `
 
-export const Section = styled.div`
-  grid-auto-rows: min-content;
-  display: grid;
-  grid-gap: var(--smallSpacing);
-  @media print {
-    display: block;
-  }
-`
-
 export const ExperienceProjectSection = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1em;
-  background-color: darkseagreen;
   flex-basis: 90vw;
   @media screen and (min-width: 30em) {
     display: grid;
@@ -126,7 +119,7 @@ export const ExperienceProjectItem = styled.div`
       margin-right: 1em;
 
       div {
-        margin-right: 1em;
+        margin-right: 0.2em;
         font-size: 1rem;
         flex-direction: row;
       }
@@ -168,7 +161,6 @@ export const PlainRightColumnTitle = styled(PlainRightColumn)`
 export const PlainRightColumnDescription = styled(PlainRightColumn)`
   font-weight: 500;
   font-family: 'Khula', sans-serif;
-  color: var(--textSecondaryColor);
 
   @media screen {
     li {
@@ -191,8 +183,8 @@ export const EducationDetails = styled.div`
     list-style-type: none;
   }
   @media print {
-    width: 100%;
-    margin-top: 0.5rem;
+    width: 15em;
+    margin-top: 0.5em;
     span {
       font-size: 1rem;
       flex-direction: row;
@@ -209,15 +201,15 @@ export const EducationDetails = styled.div`
 export const SkillsStyles = styled.span`
   font-weight: 500;
   font-family: 'Khula', sans-serif;
-  color: var(--textSecondaryColor);
   @media print {
-    font-size: 8px;
-    flex-direction: row;
     display: flex;
-    margin-right: 1em;
+    font-size: 0.7rem;
+    width: 70%;
+    margin-top: 0.5em;
   }
   @media screen and (max-width: 30em) {
-    font-size: 9px;
+    margin-left: 0.5em;
+    font-size: 0.7rem;
     flex-direction: row;
     display: flex;
     margin-right: 1em;

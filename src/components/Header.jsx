@@ -19,8 +19,7 @@ export const ContactName = styled.span`
   color: white;
   @media screen and (min-width: 30em) {
     padding-top: unset;
-    font-size: var(--headerPrimarySize);
-    font-size: 2em;
+    font-size: 1.4rem;
   }
   @media print {
     font-size: 1.2rem;
@@ -54,7 +53,6 @@ export const ContactDetailsAnchorTag = styled.a`
 
 const HeaderBase = styled.header`
   font-family: 'Yantramanav', sans-serif;
-  font-size: var(--headerPrimarySize);
 
   display: flex;
   flex-direction: column;
@@ -74,7 +72,7 @@ const HeaderBase = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 1rem;
   }
 `
 

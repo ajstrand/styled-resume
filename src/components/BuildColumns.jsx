@@ -1,5 +1,3 @@
-import { h } from 'preact'
-
 import {
   LeftColumn,
   PlainLeftColumnName,
@@ -13,11 +11,11 @@ const generateColumns = (first, second, third) => {
   return (
     <div class='details'>
       <LeftColumn class='details'>
+        <PlainRightColumnTitle>{third},</PlainRightColumnTitle>
         <PlainLeftColumnName>{first}</PlainLeftColumnName>
-        <PlainRightColumnTitle>{third}</PlainRightColumnTitle>
       </LeftColumn>
       <RightColumn>
-        <PlainLeftColumnDateRange>{second}</PlainLeftColumnDateRange>
+        <PlainLeftColumnDateRange>- {second}</PlainLeftColumnDateRange>
       </RightColumn>
     </div>
   )
