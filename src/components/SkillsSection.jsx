@@ -1,4 +1,4 @@
-import { SkillsStyles } from './ResumeBodyStyles'
+import './SkillsSection.css'
 
 const SkillsSection = (props) => {
   const { config } = props
@@ -6,7 +6,7 @@ const SkillsSection = (props) => {
     const nextVal = config[index + 1]
     return nextVal ? value.concat(', ') : value
   })
-  const jsx = <SkillsStyles>{skillsList}</SkillsStyles>
+  const jsx = <span className="skills-styles">{skillsList}</span>
   return jsx
 }
 

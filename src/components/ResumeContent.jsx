@@ -1,15 +1,10 @@
-import styled from '@emotion/styled'
 
 import PropTypes from 'prop-types'
 import { useState } from 'preact/hooks'
-import {
-  LeftColumn,
-  RightColumn,
-  TwoColumnSection,
-  ResumeBody
-} from './ResumeBodyStyles.jsx'
 
 import { css } from '@emotion/css'
+
+import "./global-styles.css"
 
 import Header from './Header.jsx'
 
@@ -18,16 +13,7 @@ import EducationSection from './EducationSection.jsx'
 import ExperienceSection from './ExperienceSection.jsx'
 import SectionAndHeader from './SectionHeader.jsx'
 
-const ResumeGridContainer = styled.div`
-  height: 100%;
-  background-color: #ffffff;
-  display: grid;
-  width: ${(props) => (props.resumeWidth ? props.resumeWidth : '100%')};
-  @media print {
-    width: 100%;
-    display: block;
-  }
-`
+
 const Block = (props) => {
   const { componentType, config, theme } = props
   const components = {
@@ -50,19 +36,7 @@ const Block = (props) => {
 const SummarySection = ({ children }) => {
   return (
     <div
-      className={css`
-        h4 {
-          font-family: 'Yantramanav', sans-serif;
-          margin: 0.2em;
-        }
-        p {
-          font-family: 'Yantramanav', sans-serif;
-
-          margin: 0.2em;
-          font-size: 1rem;
-        }
-        margin-bottom: 1em;
-      `}
+      className="summary-section"
     >
       {children}
     </div>
@@ -74,33 +48,32 @@ const ResumeContent = (props) => {
   const [localTheme, setData] = useState(props.userColors)
 
   return (
-    <ResumeGridContainer>
+    <div className='grid-container'>
       <Header theme={localTheme} config={config.header} />
-      <ResumeBody>
+      <div className='resume-body'>
         <SummarySection>
           <h4>Summary</h4>
           <p>
             Full-stack software engineer with ten years of experience developing
-            user interfaces, marketing websites, and web applications for
-            companies in the insurance, finance, advertising, retail, and
-            nonprofit sectors.
+            accessible user interfaces and web applications for
+            companies in the insurance, finance, advertising and retail sectors.
           </p>
         </SummarySection>
         <Block theme={localTheme} componentType='experience' config={config} />
-        <TwoColumnSection>
-          <LeftColumn>
+        <div className='two-column-section'>
+          <div className='plain-left-column'>
             <Block
               theme={localTheme}
               componentType='education'
               config={config}
             />
-          </LeftColumn>
-          <RightColumn>
+          </div>
+          <div className='plain-right-column'>
             <Block componentType='skills' config={config} />
-          </RightColumn>
-        </TwoColumnSection>
-      </ResumeBody>
-    </ResumeGridContainer>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

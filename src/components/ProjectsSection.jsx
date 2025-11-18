@@ -1,12 +1,4 @@
-
-
 import styled from '@emotion/styled'
-
-import {
-  ExperienceProjectItem,
-  LeftColumn,
-  RightColumn,
-} from "./ResumeBodyStyles.jsx";
 
 
 export const ProjectDescList = styled.ul`
@@ -24,17 +16,17 @@ const ProjectsSection = (props) => {
   const projectList = config.map((project) => {
     const { title, dateRange, desc } = project;
     const jsx = (
-      <ExperienceProjectItem key={title.toString()}>
-        <LeftColumn>
+      <div className='experience-project-item' key={title.toString()}>
+        <div className='plain-left-column'>
           <span className="projectName">{title}</span>
           <span className="dateRange">{dateRange}</span>
-        </LeftColumn>
-        <RightColumn>
+        </div>
+        <div className='plain-right-column'>
           <ProjectDescList>
             <ProjectDescListItem>{desc}</ProjectDescListItem>
           </ProjectDescList>
-        </RightColumn>
-      </ExperienceProjectItem>
+        </div>
+      </div>
     );
     return jsx;
   });

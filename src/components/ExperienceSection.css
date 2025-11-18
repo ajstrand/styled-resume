@@ -1,0 +1,40 @@
+.experience-project-item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 90vw;
+}
+
+@media screen and (min-width: 30em) {
+  .experience-project-item {
+    display: grid;
+    grid-template-areas: 'title description';
+    grid-gap: var(--primarySpacing);
+    grid-template-columns: minmax(auto, 135px) 1fr;
+  }
+}
+
+@media print {
+  .experience-project-item {
+    margin-top: 0.5rem;
+  }
+  
+  .experience-project-item ul.list {
+    margin-top: 0.3em !important;
+    padding-left: 1.1em;
+    margin-bottom: 0;
+
+  }
+  
+  .experience-project-item .details {
+    flex-direction: row;
+    display: flex;
+    margin-right: 1em;
+  }
+  
+  .experience-project-item .details div {
+    margin-right: 0.2em;
+    font-size: 1rem;
+    /* font-size: 10px; */
+    flex-direction: row;
+  }
+}

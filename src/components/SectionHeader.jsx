@@ -1,52 +1,4 @@
-import styled from '@emotion/styled'
-
-const Section = styled.div`
-  grid-auto-rows: min-content;
-  display: grid;
-  grid-gap: var(--smallSpacing);
-  @media print {
-    display: block;
-  }
-`
-
-const ExperienceSection = styled(Section)`
-  break-after: page;
-`
-
-const SectionHeader = styled.div`
-  font-weight: 600;
-  font-family: 'Yantramanav', sans-serif;
-  font-size: var(--headerPrimarySize);
-  color: #000000;
-
-  text-transform: capitalize;
-
-  border-bottom: 1px solid;
-  font-size: var(--headerPrimarySize);
-  margin-bottom: -5px;
-  @media print {
-    .details div {
-      font-size: 1rem;
-      flex-direction: row;
-    }
-  }
-`
-const SectionHeaderNoBorder = styled.div`
-  font-weight: 600;
-  font-family: 'Yantramanav', sans-serif;
-  font-size: var(--headerPrimarySize);
-  color: #000000;
-
-  text-transform: capitalize;
-
-  font-size: var(--headerPrimarySize);
-  @media print {
-    .details div {
-      font-size: 1rem;
-      flex-direction: row;
-    }
-  }
-`
+import './SectionHeader.css'
 
 const SectionAndHeader = (props) => {
   const { sectionTitle, children } = props
@@ -57,28 +9,28 @@ const SectionAndHeader = (props) => {
 
   if (sectionTitle === 'experience') {
     return (
-      <ExperienceSection>
-        <SectionHeader color={'#ffdffd'}>{sectionTitle}</SectionHeader>
+      <div className="experience-section">
+        <div className="section-header">{sectionTitle}</div>
         {children}
-      </ExperienceSection>
+      </div>
     )
   }
 
   if (sectionTitle === 'education' || sectionTitle === 'skills') {
     return (
-      <Section>
-        <SectionHeaderNoBorder color={'#ffdffd'}>
+      <div className="section">
+        <div className="section-header-no-border">
           {sectionTitle}
-        </SectionHeaderNoBorder>
+        </div>
         {children}
-      </Section>
+      </div>
     )
   } else {
     return (
-      <Section>
-        <SectionHeader color={'#ffdffd'}>{sectionTitle}</SectionHeader>
+      <div className="section">
+        <div className="section-header">{sectionTitle}</div>
         {children}
-      </Section>
+      </div>
     )
   }
 }

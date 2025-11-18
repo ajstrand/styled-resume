@@ -1,4 +1,5 @@
-import { EducationDetails } from './ResumeBodyStyles.jsx'
+import './EducationSection.css'
+
 const EducationSection = (props) => {
   const { config } = props
   let data
@@ -13,11 +14,11 @@ const EducationSection = (props) => {
     const { name, date, program } = data
 
     return (
-      <EducationDetails key={section.toString()}>
+      <div key={section.toString()} className="education-details">
         <span>{name}</span>
         <span>{program}</span>
         <span>{date}</span>
-      </EducationDetails>
+      </div>
     )
   })
   return list

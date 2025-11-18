@@ -1,0 +1,161 @@
+/* Base Column styles */
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 90vw;
+}
+
+.plain-left-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+}
+
+.plain-right-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  grid-area: description;
+
+  .list {
+    background-color: black;
+  }
+
+  > ul {
+    margin-top: 5px !important;
+    padding-left: 1.2em;
+    list-style-type: square;
+  }
+
+  > .jobTitle ~ .jobTitle {
+    margin-top: 10px;
+  }
+}
+
+.two-column-section {
+  display: flex;
+  flex-direction: row;
+
+  @media print {
+    margin-top: 1em;
+    display: flex;
+  }
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex-basis: auto;
+
+  @media screen and (min-width: 30em) {
+    flex-basis: 200px;
+    flex-grow: 9999;
+    margin: 0 1em 1em 0;
+  }
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+
+  @media screen and (min-width: 30em) {
+    flex-basis: 15em;
+    flex-grow: 1;
+  }
+}
+
+.plain-left-column-name {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  font-weight: 600;
+  font-family: 'Yantramanav', sans-serif;
+  font-size: var(--headerPrimarySize);
+  color: var(--textPrimaryColor);
+  text-transform: capitalize;
+
+  @media print {
+    font-size: 1em;
+  }
+}
+
+.plain-left-column-date-range {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  font-weight: 500;
+  font-family: 'Khula', sans-serif;
+  list-style-type: none;
+  /* color: var(--textSecondaryColor); */
+  text-transform: uppercase;
+  font-size: 0.85rem;
+
+  @media screen and (min-width: 30em) {
+    list-style-type: circle;
+  }
+}
+
+.plain-right-column-title {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  grid-area: description;
+  font-weight: 600;
+  font-family: 'Yantramanav', sans-serif;
+  font-size: var(--headerPrimarySize);
+  color: var(--textPrimaryColor);
+  text-transform: capitalize;
+
+  .list {
+    background-color: black;
+  }
+
+  > ul {
+    margin-top: 5px !important;
+    padding-left: 1.2em;
+    list-style-type: square;
+  }
+
+  > .jobTitle ~ .jobTitle {
+    margin-top: 10px;
+  }
+}
+
+.plain-right-column-description {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  grid-area: description;
+  font-weight: 500;
+  font-family: 'Khula', sans-serif;
+
+  .list {
+    background-color: black;
+  }
+
+  > ul {
+    margin-top: 5px !important;
+    padding-left: 1.2em;
+    list-style-type: square;
+  }
+
+  > .jobTitle ~ .jobTitle {
+    margin-top: 10px;
+  }
+
+  @media screen {
+    li {
+      margin: 2px;
+    }
+  }
+
+  @media print {
+    li {
+      /* font-size: 0.85rem; */
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}

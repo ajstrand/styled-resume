@@ -1,36 +1,27 @@
-import {
-  LeftColumn,
-  PlainLeftColumnName,
-  PlainLeftColumnDateRange,
-  RightColumn,
-  PlainRightColumnTitle,
-  PlainRightColumnDescription
-} from './ResumeBodyStyles.jsx'
+import './BuildColumns.css'
 
 const generateColumns = (first, second, third) => {
   return (
-    <div class='details'>
-      <LeftColumn class='details'>
-        <PlainRightColumnTitle>{third},</PlainRightColumnTitle>
-        <PlainLeftColumnName>{first}</PlainLeftColumnName>
-      </LeftColumn>
-      <RightColumn>
-        <PlainLeftColumnDateRange>- {second}</PlainLeftColumnDateRange>
-      </RightColumn>
+    <div className='details'>
+      <div className='left-column details'>
+        <div className='plain-right-column-title'>{third},</div>
+        <div className='plain-left-column-name'>{first}</div>
+      </div>
+      <div className='right-column'>
+        <div className='plain-left-column-date-range'>- {second}</div>
+      </div>
     </div>
   )
 }
 
 export const generateAllColumns = (first, second, third, fourth, modifier) => {
+  const Element = modifier || 'div'
   return (
     <>
       {generateColumns(first, second, third)}
-      <PlainRightColumnDescription
-        className='list'
-        as={modifier ? modifier : null}
-      >
+      <Element className='list plain-right-column-description'>
         {fourth}
-      </PlainRightColumnDescription>
+      </Element>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { generateAllColumns } from './BuildColumns.jsx'
-import { ExperienceProjectItem } from './ResumeBodyStyles.jsx'
+import './ExperienceSection.css'
 
 const ExperienceSection = (props) => {
   const { config } = props
@@ -13,9 +13,9 @@ const ExperienceSection = (props) => {
         })
       : null
     const jsx = (
-      <ExperienceProjectItem key={companyName.toString()}>
+      <div key={companyName.toString()} className="experience-project-item">
         {generateAllColumns(companyName, dateRange, jobTitle, jobTasks, 'ul')}
-      </ExperienceProjectItem>
+      </div>
     )
     return jsx
   })
