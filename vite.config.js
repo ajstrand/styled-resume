@@ -18,6 +18,8 @@ export default defineConfig({
   },
   plugins: [preact()],
   build: {
-    minify: false
+    cssMinify:true,
+
+    minify: true
   }
 })

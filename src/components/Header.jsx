@@ -1,80 +1,5 @@
-import styled from '@emotion/styled'
-import { BodyCommonStyles } from './ResumeBodyStyles.jsx'
+import './Header.css'
 import { useState, useEffect } from 'preact/hooks'
-
-export const Description = styled.p`
-  ${BodyCommonStyles}
-`
-
-// export const Accent = styled.span`
-//   font-weight: 600;
-//   font-style: italic;
-//   color: ${mainColors.textPrimaryColor};
-// `;
-
-export const ContactName = styled.span`
-  text-transform: capitalize;
-  font-family: 'Yantramanav', sans-serif;
-  font-weight: 600;
-  color: white;
-  @media screen and (min-width: 30em) {
-    padding-top: unset;
-    font-size: 1.4rem;
-  }
-  @media print {
-    font-size: 1.2rem;
-  }
-`
-
-export const ContactDetails = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  @media screen and (min-width: 30em) {
-    text-align: right;
-  }
-  @media print {
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-
-    li {
-      margin: 1em;
-    }
-  }
-`
-
-export const ContactDetailsAnchorTag = styled.a`
-  text-decoration: none;
-  color: white;
-`
-
-const HeaderBase = styled.header`
-  font-family: 'Yantramanav', sans-serif;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accentColor);
-  height: fit-content;
-  padding: 1em;
-  @media screen and (min-width: 30em) {
-    flex-basis: auto;
-    padding: 0 20px;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  @media print {
-    height: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-  }
-`
 
 const Header = (props) => {
   const { name, site, emailLabel, emailLinkValue, phone } = props.config
@@ -99,17 +24,17 @@ const Header = (props) => {
     const DetailsList = list.map((dataToRender) => {
       return (
         <li key={dataToRender.label.toString()}>
-          <ContactDetailsAnchorTag href={dataToRender.href} target='_blank'>
+          <a className="contact-details-anchor-tag" href={dataToRender.href} target='_blank'>
             {dataToRender.label}
-          </ContactDetailsAnchorTag>
+          </a>
         </li>
       )
     })
     content = (
-      <HeaderBase>
-        <ContactName>{name}</ContactName>
-        <ContactDetails>{DetailsList}</ContactDetails>
-      </HeaderBase>
+      <header className="header-base">
+        <span className="contact-name">{name}</span>
+        <ul className="contact-details">{DetailsList}</ul>
+      </header>
     )
   } else {
     content = null

@@ -2,8 +2,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'preact/hooks'
 
-import { css } from '@emotion/css'
-
 import "./global-styles.css"
 
 import Header from './Header.jsx'
