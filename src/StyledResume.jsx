@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'preact/hooks'
 import ResumeContent from './components/ResumeContent.jsx'
-//import defaultResumeDataObj from './components/defaultResumeDataTemplate'
-import defaultResumeDataObj from './components/myResumeData'
+import defaultResumeDataObj from "./data/myResumeData.js"
+//import defaultResumeDataObj from './components/myResumeData'
 import PropTypes, { string } from 'prop-types'
 import './styles/tokens.css'
 import Viewport from './components/Viewport.jsx'
